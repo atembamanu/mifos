@@ -111,25 +111,25 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
     private void setUpViewPagerAndTabLayout() {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager());
 
-        viewPagerAdapter.addFragment(AccountsFragment.newInstance(Constants.SAVINGS_ACCOUNTS),
-                getString(R.string.savings));
+//        viewPagerAdapter.addFragment(AccountsFragment.newInstance(Constants.SAVINGS_ACCOUNTS),
+//                getString(R.string.savings));
         viewPagerAdapter.addFragment(AccountsFragment.newInstance(Constants.LOAN_ACCOUNTS),
                 getString(R.string.loan));
-        viewPagerAdapter.addFragment(AccountsFragment.newInstance(Constants.SHARE_ACCOUNTS),
-                getString(R.string.share));
+//        viewPagerAdapter.addFragment(AccountsFragment.newInstance(Constants.SHARE_ACCOUNTS),
+//                getString(R.string.share));
 
         viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(viewPagerAdapter);
         switch (accountType) {
-            case SAVINGS:
-                viewPager.setCurrentItem(0);
-                break;
+//            case SAVINGS:
+//                viewPager.setCurrentItem(0);
+//                break;
             case LOAN:
                 viewPager.setCurrentItem(1);
                 break;
-            case SHARE:
-                viewPager.setCurrentItem(2);
-                break;
+//            case SHARE:
+//                viewPager.setCurrentItem(2);
+//                break;
         }
         tabLayout.setupWithViewPager(viewPager);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -186,9 +186,9 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
      */
     @Override
     public void showLoanAccounts(List<LoanAccount> loanAccounts) {
-        ((AccountsView) getChildFragmentManager().findFragmentByTag(getFragmentTag(1)))
+        ((AccountsView) getChildFragmentManager().findFragmentByTag(getFragmentTag(0)))
                 .showLoanAccounts(loanAccounts);
-        ((AccountsView) getChildFragmentManager().findFragmentByTag(getFragmentTag(1)))
+        ((AccountsView) getChildFragmentManager().findFragmentByTag(getFragmentTag(0)))
                 .hideProgress();
     }
 
@@ -249,7 +249,7 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_account, menu);
         if (viewPager.getCurrentItem() == 0) {
-            menu.findItem(R.id.menu_filter_savings).setVisible(true);
+            menu.findItem(R.id.menu_filter_savings).setVisible(false);
             menu.findItem(R.id.menu_filter_loan).setVisible(false);
             menu.findItem(R.id.menu_filter_shares).setVisible(false);
             menu.findItem(R.id.menu_search_saving).setVisible(true);
@@ -267,7 +267,7 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
         } else if (viewPager.getCurrentItem() == 2) {
             menu.findItem(R.id.menu_filter_savings).setVisible(false);
             menu.findItem(R.id.menu_filter_loan).setVisible(false);
-            menu.findItem(R.id.menu_filter_shares).setVisible(true);
+            menu.findItem(R.id.menu_filter_shares).setVisible(false);
             menu.findItem(R.id.menu_search_saving).setVisible(false);
             menu.findItem(R.id.menu_search_loan).setVisible(false);
             menu.findItem(R.id.menu_search_share).setVisible(true);
@@ -279,15 +279,15 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_filter_savings:
-                showFilterDialog(AccountType.SAVINGS);
-                break;
+//            case R.id.menu_filter_savings:
+//                showFilterDialog(AccountType.SAVINGS);
+//                break;
             case R.id.menu_filter_loan:
                 showFilterDialog(AccountType.LOAN);
                 break;
-            case R.id.menu_filter_shares:
-                showFilterDialog(AccountType.SHARE);
-                break;
+//            case R.id.menu_filter_shares:
+//                showFilterDialog(AccountType.SHARE);
+//                break;
         }
         return true;
     }
@@ -320,16 +320,18 @@ public class ClientAccountsFragment extends BaseFragment implements AccountsView
             @Override
             public boolean onQueryTextChange(String newText) {
 
-                if (account == AccountType.SAVINGS) {
-                    ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
-                            getFragmentTag(0))).searchSavingsAccount(newText);
-                } else if (account == AccountType.LOAN) {
-                    ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
-                            getFragmentTag(1))).searchLoanAccount(newText);
-                } else if (account == AccountType.SHARE) {
-                    ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
-                            getFragmentTag(2))).searchSharesAccount(newText);
-                }
+//                if (account == AccountType.SAVINGS) {
+//                    ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
+//                            getFragmentTag(0))).searchSavingsAccount(newText);
+//                } else
+                    if (account == AccountType.LOAN) {
+                        ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
+                                getFragmentTag(1))).searchLoanAccount(newText);
+                    }
+//                } else if (account == AccountType.SHARE) {
+//                    ((AccountsFragment) getChildFragmentManager().findFragmentByTag(
+//                            getFragmentTag(2))).searchSharesAccount(newText);
+//                }
 
                 return false;
             }

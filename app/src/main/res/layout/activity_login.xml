@@ -30,7 +30,7 @@
                 android:layout_height="@dimen/login_height"
                 android:layout_marginBottom="@dimen/login_margin_bottom"
                 android:layout_width="wrap_content"
-                android:src="@drawable/mifos_logo"/>
+                android:src="@drawable/download"/>
 
             <!-- Username  Label -->
             <android.support.design.widget.TextInputLayout
@@ -79,6 +79,7 @@
                 android:layout_marginTop="@dimen/login_margin_top"
                 android:layout_width="match_parent"
                 android:text="@string/login"
+                android:background="@drawable/background_gradient"
                 android:textColor="@color/white"/>
 
             <android.support.v7.widget.AppCompatButton
@@ -86,9 +87,21 @@
                 android:id="@+id/btn_register"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:text="@string/create_an_account"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/primary"/>
+
+
+            <android.support.v7.widget.AppCompatButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/btn_client"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/create_an_account"
+                android:background="@drawable/signupbtn_background"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                />
 
         </LinearLayout>
 

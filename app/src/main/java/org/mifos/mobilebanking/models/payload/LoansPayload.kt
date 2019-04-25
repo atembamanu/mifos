@@ -66,8 +66,8 @@ data class LoansPayload(
         @SerializedName("linkAccountId")
         var linkAccountId: Int? = null,
 
-        @SerializedName("loanPurposeId")
-        var loanPurposeId: Int? = null,
+//        @SerializedName("loanPurposeId")
+//        var loanPurposeId: Int? = null,
 
         @SerializedName("maxOutstandingLoanBalance")
         var maxOutstandingLoanBalance: Double? = null,

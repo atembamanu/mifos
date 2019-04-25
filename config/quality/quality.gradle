@@ -1,4 +1,5 @@
-/**
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android' /**
  * Set up Checkstyle, Findbugs and PMD to perform extensive code analysis.
  *
  * Gradle tasks added:

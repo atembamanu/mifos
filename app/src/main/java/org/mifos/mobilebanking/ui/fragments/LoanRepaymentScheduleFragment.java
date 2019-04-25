@@ -148,6 +148,8 @@ public class LoanRepaymentScheduleFragment extends BaseFragment implements
                 .setPeriods(loanWithAssociations.getRepaymentSchedule().getPeriods());
 
         tvAccountNumber.setText(loanWithAssociations.getAccountNo());
+
+        System.out.println("trouble"+loanWithAssociations.getAccountNo());
         tvDisbursementDate.setText(DateHelper.getDateAsString(loanWithAssociations.
                 getTimeline().getExpectedDisbursementDate()));
         tvNumberOfPayments.setText(String.

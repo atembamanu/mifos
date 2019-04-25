@@ -324,6 +324,9 @@ public class HomeFragment extends BaseFragment implements HomeView,
         startActivity(new Intent(getActivity(), LoanApplicationActivity.class));
     }
 
+
+
+
     /**
      * Opens {@link BeneficiaryListFragment} which contains list of Beneficiaries associated with
      * Client's account

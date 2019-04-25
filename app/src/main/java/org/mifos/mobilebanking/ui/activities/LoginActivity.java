@@ -142,6 +142,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
         startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
 
     }
+    @OnClick(R.id.btn_client)
+    public void onClientClicked() {
+        startActivity(new Intent(LoginActivity.this, CreateClientActivity.class));
+
+    }
 
     @Override
     protected void onDestroy() {

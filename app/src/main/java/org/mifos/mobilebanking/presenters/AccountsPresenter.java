@@ -87,9 +87,9 @@ public class AccountsPresenter extends BasePresenter<AccountsView> {
                     @Override
                     public void onNext(ClientAccounts clientAccounts) {
                         getMvpView().hideProgress();
-                        getMvpView().showSavingsAccounts(clientAccounts.getSavingsAccounts());
+                       // getMvpView().showSavingsAccounts(clientAccounts.getSavingsAccounts());
                         getMvpView().showLoanAccounts(clientAccounts.getLoanAccounts());
-                        getMvpView().showShareAccounts(clientAccounts.getShareAccounts());
+                       // getMvpView().showShareAccounts(clientAccounts.getShareAccounts());
                     }
                 })
         );

@@ -1,4 +1,4 @@
-<resources>
+ <resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="MaterialAppTheme">
@@ -27,7 +27,7 @@
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 
-    <style name="MaterialAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <style name="MaterialAlertDialogStyle" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorAccent">@color/accent</item>
         <item name="android:textColorPrimary">@color/black</item>
@@ -58,13 +58,13 @@
         <item name="android:padding">@dimen/layout_padding_8dp</item>
     </style>
 
-    <style name="MaterialDatePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+    <style name="MaterialDatePickerTheme" parent="Base.Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/accent</item>
     </style>
     
-    <!--Theme for Spash-->
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_background</item>
-    </style>
+    <!--&lt;!&ndash;Theme for Spash&ndash;&gt;-->
+    <!--<style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">-->
+        <!--<item name="android:windowBackground">@drawable/splash_background</item>-->
+    <!--</style>-->
 
 </resources>

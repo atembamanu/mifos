@@ -36,7 +36,7 @@
             android:layout_height="100dp"
             android:layout_margin="@dimen/layout_padding_16dp"
             android:layout_width="100dp"
-            android:src="@mipmap/mifos_icon"/>
+            android:src="@mipmap/ic_launcher"/>
 
         <TextView
             android:id="@+id/tv_copy_right"
@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/layout_padding_16dp"
             android:layout_width="wrap_content"
+            android:background="@drawable/background_gradient"
             android:text="@string/licenses"/>
 
     </LinearLayout>

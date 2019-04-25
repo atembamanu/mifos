@@ -208,6 +208,7 @@
                                 android:layout_height="60dp"
                                 android:layout_width="60dp"
                                 android:shape="ring"
+                                android:visibility="gone"
                                 android:thicknessRatio="1.9"
                                 app:cardBackgroundColor="@color/primary"
                                 app:cardCornerRadius="30dp">
@@ -243,6 +244,7 @@
                             android:background="?selectableItemBackgroundBorderless"
                             android:clickable="true"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:id="@+id/ll_transfer"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -256,6 +258,7 @@
                                 android:layout_height="60dp"
                                 android:layout_width="60dp"
                                 android:shape="ring"
+                                android:visibility="gone"
                                 android:thicknessRatio="1.9"
                                 app:cardBackgroundColor="@color/primary"
                                 app:cardCornerRadius="30dp">
@@ -305,6 +308,8 @@
                                 android:layout_height="60dp"
                                 android:layout_width="60dp"
                                 android:shape="ring"
+                                android:layout_marginTop="40dp"
+                                android:layout_gravity="center"
                                 android:thicknessRatio="1.9"
                                 app:cardBackgroundColor="@color/primary"
                                 app:cardCornerRadius="30dp">

@@ -200,6 +200,7 @@
                 style="@style/Button.Base"
                 android:layout_marginTop="10dp"
                 android:text="@string/submit_loan"
+                android:background="@drawable/background_gradient"
                 android:layout_marginStart="@dimen/default_padding"
                 android:layout_marginLeft="@dimen/default_padding"
                 android:layout_marginRight="@dimen/default_padding"

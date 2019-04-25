@@ -130,6 +130,7 @@ public class LoanAccountSummaryFragment extends BaseFragment {
      */
     public void showLoanAccountsDetail(LoanWithAssociations loanWithAssociations) {
         llLoanSummary.setVisibility(View.VISIBLE);
+        System.out.println("trouble"+loanWithAssociations.getAccountNo());
         tvLoanProductName.setText(loanWithAssociations.getLoanProductName());
         tvPrincipalName.setText(CurrencyUtil.formatCurrency(getActivity(),
                 loanWithAssociations.getPrincipal()));

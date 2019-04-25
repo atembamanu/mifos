@@ -7,6 +7,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_margin">
         <EditText android:id="@+id/et_account_number"
@@ -29,6 +30,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_margin">
         <EditText android:id="@+id/et_first_name"
@@ -41,6 +43,8 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:visibility="gone"
         android:layout_marginTop="@dimen/default_margin">
         <EditText android:id="@+id/et_last_name"
             android:layout_width="match_parent"
@@ -52,6 +56,7 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginTop="@dimen/default_margin">
         <EditText android:id="@+id/et_phone_number"
             android:layout_width="match_parent"

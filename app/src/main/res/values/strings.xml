@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mifos Mobile</string>
+    <string name="app_name">Jisave</string>
     <string name="login">Login</string>
     <string name="toast_welcome">Welcome %1$s</string>
     <string name="unable_to_connect">Not connected to internet</string>
@@ -543,5 +543,25 @@
         <item>ru</item>
         <item>sw</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_a_client">Next</string>
+    <string name="middle_name">Middle name</string>
+    <string name="create_client">Create Client</string>
+    <string name="TOSInfo">"I have read and accepted the <a href='https://www.anyurl.com/privacy'>privacy statement</a> and <a href='https://www.anyurl.com/tos'>terms of service.</a>"</string>
+
+
+    <string name="content">
+This User Agreement is a financial services and an end-user license agreement between the person whose duly registered mobile phone and number and personal details were used to register with and utilize the UIP Credit Mobile Lending App (“UIP Credit Customer” or “You’), and UIP Credit Limited, a company incorporated in Kenya (“UIP Credit), which provides the UIP Credit Android application (“UIP Credit App” or “App”) for mobile based Credit Advances.
+
+
+</string>
+
+    <string name="content2">
+
+        The UIP Credit App allows users to obtain Credit Advances. The maximum credit limit of this advance will vary by the individual borrower's credit score and repayment history, among other factors. Charges associated with the Credit Advance will include but are not limited to the Service Fee, which typically varies between 5%-20% of the advance amount per 30-day or 21-day advance period as the UIP Credit Customer may choose, as well as any associated telecom network distribution costs which are paid by the UIP Credit Customer directly to his or her telecom provider. The Service Fee and other charges are subject to change as may be determined by UIP Credit from time to time, subject however to the thresholds permissible by law. UIP Credit will also communicate the Charges and Service Fee applicable to you prior to issuing the Credit Advances.
+
+    </string>
 
 </resources>

@@ -115,8 +115,8 @@ data class LoanTemplate(
         @SerializedName("loanOfficerOptions")
         var loanOfficerOptions: List<LoanOfficerOptions> = ArrayList(),
 
-        @SerializedName("loanPurposeOptions")
-        var loanPurposeOptions: List<LoanPurposeOptions> = ArrayList(),
+//       @SerializedName("loanPurposeOptions")
+//       var loanPurposeOptions: List<LoanPurposeOptions> = ArrayList(),
 
         @SerializedName("fundOptions")
         var fundOptions: List<FundOptions> = ArrayList(),

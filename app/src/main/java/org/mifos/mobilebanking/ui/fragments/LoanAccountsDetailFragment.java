@@ -156,6 +156,7 @@ public class LoanAccountsDetailFragment extends BaseFragment implements LoanAcco
     public void showLoanAccountsDetail(LoanWithAssociations loanWithAssociations) {
         llAccountDetail.setVisibility(View.VISIBLE);
         this.loanWithAssociations = loanWithAssociations;
+        System.out.println("trouble"+loanWithAssociations.getAccountNo());
         if (loanWithAssociations.getStatus().getActive()) {
             List<Integer> overdueSinceDate =
                     loanWithAssociations.getSummary().getOverdueSinceDate();
@@ -215,8 +216,12 @@ public class LoanAccountsDetailFragment extends BaseFragment implements LoanAcco
      */
     @OnClick(R.id.btn_make_payment)
     public void onMakePaymentClicked() {
-        ((BaseActivity) getActivity()).replaceFragment(SavingsMakeTransferFragment
-                .newInstance(loanId, Constants.TRANSFER_PAY_TO), true, R.id.container);
+//       ((BaseActivity) getActivity()).replaceFragment(SavingsMakeTransferFragment
+//               .newInstance(loanId, Constants.TRANSFER_PAY_TO), true, R.id.container);
+
+        ((BaseActivity) getActivity()).replaceFragment(StkPushFragment
+                .newInstance(loanId), true, R.id.container);
+
     }
 
     /**

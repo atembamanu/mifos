@@ -1,5 +1,7 @@
 package org.mifos.mobilebanking.ui.fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Patterns;
@@ -24,6 +26,13 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.MyPREFERENCES;
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.accountIdacc;
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.firstnameacc;
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.lastnameacc;
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.middlenameacc;
+import static org.mifos.mobilebanking.ui.activities.CreateClientActivity.phonenumberacc;
 
 /**
  * Created by dilpreet on 31/7/17.
@@ -83,19 +92,31 @@ public class RegistrationFragment extends BaseFragment implements RegistrationVi
 
     @OnClick(R.id.btn_register)
     public void registerClicked() {
-
         if (areFieldsValidated()) {
+
+            SharedPreferences settings =  getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+            String firstname = settings.getString(firstnameacc, "");
+            String lastname = settings.getString(lastnameacc, "");
+           // String middlename = settings.getString(middlenameacc, "");
+            String phonenumber = settings.getString(phonenumberacc, "");
+            String accountid = settings.getString(accountIdacc, "");
 
             RadioButton radioButton =  rootView.findViewById(rgVerificationMode.
                     getCheckedRadioButtonId());
 
             RegisterPayload payload = new RegisterPayload();
-            payload.setAccountNumber(etAccountNumber.getText().toString());
+           // payload.setAccountNumber(etAccountNumber.getText().toString());
+            payload.setAccountNumber(accountid);
+            System.out.println("account2"+firstname);
             payload.setAuthenticationMode(radioButton.getText().toString());
             payload.setEmail(etEmail.getText().toString());
-            payload.setFirstName(etFirstName.getText().toString());
-            payload.setLastName(etLastName.getText().toString());
-            payload.setMobileNumber(etPhoneNumber.getText().toString());
+          //  payload.setFirstName(etFirstName.getText().toString());
+            payload.setFirstName(firstname);
+          //  payload.setLastName(etLastName.getText().toString());
+           // payload.setMobileNumber(etPhoneNumber.getText().toString());
+           System.out.println("Print Data"+firstname);
+            payload.setLastName(lastname);
+            payload.setMobileNumber(phonenumber);
             if (!etPassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
                 Toaster.show(rootView, getString(R.string.error_password_not_match));
                 return;
@@ -110,17 +131,26 @@ public class RegistrationFragment extends BaseFragment implements RegistrationVi
             } else {
                 Toaster.show(rootView, getString(R.string.no_internet_connection));
             }
-        }
+       }
 
     }
 
     private boolean areFieldsValidated() {
 
-        if (etAccountNumber.getText().toString().trim().length() == 0) {
+        SharedPreferences settings =  getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String firstname = settings.getString(firstnameacc, "");
+        String lastname = settings.getString(lastnameacc, "");
+        // String middlename = settings.getString(middlenameacc, "");
+        String phonenumber = settings.getString(phonenumberacc, "");
+        String accountid = settings.getString(accountIdacc, "");
+
+
+        if (accountid.trim().length() == 0) {
             Toaster.show(rootView, getString(R.string.error_validation_blank, getString(R.string.
                     account_number)));
             return false;
-        } else if (etUsername.getText().toString().trim().length() == 0) {
+        } else
+            if (etUsername.getText().toString().trim().length() == 0) {
             Toaster.show(rootView, getString(R.string.error_validation_blank, getString(R.string.
                     username)));
             return false;
@@ -133,15 +163,17 @@ public class RegistrationFragment extends BaseFragment implements RegistrationVi
             Toaster.show(rootView, getString(R.string.error_validation_cannot_contain_spaces,
                     getString(R.string.username), getString(R.string.not_contain_username)));
             return false;
-        } else if (etFirstName.getText().length() == 0) {
+        } else
+            if (firstname.length() == 0) {
             Toaster.show(rootView, getString(R.string.error_validation_blank, getString(R.string.
                     first_name)));
             return false;
-        } else if (etLastName.getText().toString().trim().length() == 0) {
+        } else if (lastname.trim().length() == 0) {
             Toaster.show(rootView, getString(R.string.error_validation_blank, getString(R.string.
                     last_name)));
             return false;
-        } else if (etEmail.getText().toString().trim().length() == 0) {
+        } else
+            if (etEmail.getText().toString().trim().length() == 0) {
             Toaster.show(rootView, getString(R.string.error_validation_blank, getString(R.string.
                     email)));
             return false;

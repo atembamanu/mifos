@@ -23,7 +23,7 @@ public class SelfServiceInterceptor implements Interceptor {
 
     public static final String HEADER_TENANT = "Fineract-Platform-TenantId";
     public static final String HEADER_AUTH = "Authorization";
-    public static final String DEFAULT_TENANT = "mobile";
+    public static final String DEFAULT_TENANT = "qa";
     private String authToken;
     private String tenant;
 

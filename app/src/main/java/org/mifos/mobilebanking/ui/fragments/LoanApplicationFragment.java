@@ -231,7 +231,7 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
     private void submitNewLoanApplication() {
         LoansPayload loansPayload = new LoansPayload();
         loansPayload.setClientId(loanTemplate.getClientId());
-        loansPayload.setLoanPurposeId(purposeId);
+        //loansPayload.setLoanPurposeId(purposeId);
         loansPayload.setProductId(productId);
         loansPayload.setPrincipal(Double.
                 parseDouble(tilPrincipalAmount.getEditText().getText().toString()));
@@ -263,7 +263,7 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
         loansPayload.setPrincipal(Double.
                 parseDouble(tilPrincipalAmount.getEditText().getText().toString()));
         loansPayload.setProductId(productId);
-        loansPayload.setLoanPurposeId(purposeId);
+        //loansPayload.setLoanPurposeId(purposeId);
         loansPayload.setLoanTermFrequency(loanTemplate.getTermFrequency());
         loansPayload.setLoanTermFrequencyType(loanTemplate.getInterestRateFrequencyType().getId());
         loansPayload.setNumberOfRepayments(loanTemplate.getNumberOfRepayments());
@@ -424,11 +424,11 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
         tilPrincipalAmount.getEditText().setText(String.valueOf(loanTemplate.getPrincipal()));
         tvCurrency.setText(loanTemplate.getCurrency().getDisplayLabel());
 
-        listLoanPurpose.clear();
-        for (LoanPurposeOptions loanPurposeOptions : loanTemplate.getLoanPurposeOptions()) {
-            listLoanPurpose.add(loanPurposeOptions.getName());
-        }
-        loanPurposeAdapter.notifyDataSetChanged();
+//        listLoanPurpose.clear();
+//        for (LoanPurposeOptions loanPurposeOptions : loanTemplate.getLoanPurposeOptions()) {
+//            listLoanPurpose.add(loanPurposeOptions.getName());
+//        }
+//        loanPurposeAdapter.notifyDataSetChanged();
     }
 
     /**
@@ -439,25 +439,26 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
     @Override
     public void showUpdateLoanTemplateByProduct(LoanTemplate loanTemplate) {
         this.loanTemplate = loanTemplate;
-        listLoanPurpose.clear();
-        for (LoanPurposeOptions loanPurposeOptions : loanTemplate.getLoanPurposeOptions()) {
-            listLoanPurpose.add(loanPurposeOptions.getName());
-        }
-        loanPurposeAdapter.notifyDataSetChanged();
-
-        if (isLoanUpdatePurposesInitialization &&
-                loanWithAssociations.getLoanPurposeName() != null) {
-            spLoanPurpose.setSelection(loanPurposeAdapter
-                    .getPosition(loanWithAssociations.getLoanPurposeName()));
-            isLoanUpdatePurposesInitialization = false;
-        } else {
+//        listLoanPurpose.clear();
+//        for (LoanPurposeOptions loanPurposeOptions : loanTemplate.getLoanPurposeOptions()) {
+//            listLoanPurpose.add(loanPurposeOptions.getName());
+//        }
+//        loanPurposeAdapter.notifyDataSetChanged();
+//
+//        if (isLoanUpdatePurposesInitialization &&
+//                loanWithAssociations.getLoanPurposeName() != null) {
+//            spLoanPurpose.setSelection(loanPurposeAdapter
+//                    .getPosition(loanWithAssociations.getLoanPurposeName()));
+//            isLoanUpdatePurposesInitialization = false;
+//        } else
+// {
             tvAccountNumber.setText(getString(R.string.string_and_string,
                     getString(R.string.account_number) + " ", loanTemplate.getClientAccountNo()));
             tvNewLoanApplication.setText(getString(R.string.string_and_string,
                     getString(R.string.new_loan_application) + " ", loanTemplate.getClientName()));
             tilPrincipalAmount.getEditText().setText(String.valueOf(loanTemplate.getPrincipal()));
             tvCurrency.setText(loanTemplate.getCurrency().getDisplayLabel());
-        }
+       // }
     }
 
     /**
@@ -522,10 +523,10 @@ public class LoanApplicationFragment extends BaseFragment implements LoanApplica
                             LoanState.UPDATE);
                 }
                 break;
-
-            case R.id.sp_loan_purpose:
-                purposeId = loanTemplate.getLoanPurposeOptions().get(position).getId();
-                break;
+//
+//            case R.id.sp_loan_purpose:
+//                purposeId = loanTemplate.getLoanPurposeOptions().get(position).getId();
+//                break;
         }
     }
 

@@ -22,7 +22,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:scaleType="fitXY"
-                tools:src="@drawable/mifos_logo"
+                tools:src="@drawable/download"
                 app:layout_collapseMode="parallax"/>
             <View
                 android:layout_width="match_parent"
